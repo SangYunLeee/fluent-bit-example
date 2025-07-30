@@ -1,0 +1,10 @@
+services:
+  fluent-bit:
+    image: sororiri/fluent-bit:1.5.4-lua-openssl-0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/fluent-bit/etc
+    platform: linux/amd64
+    command: [ "-c", "fluent-bit.conf" ]
